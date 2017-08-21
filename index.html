@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Code for Nagoya - ともに考え、ともにつくる</title>
+    <meta name="author" content="Code for Nagoya" />
+    <meta name="description" content="fullPage continuous scrolling demo." />
+    <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" type="text/css" href="vendors/materialize/css/materialize.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendors/fullpage/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="shortcut icon" href="icon.png">
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="vendors/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="vendors/fullpage/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+<body>
+
+<ul id="menu">
+    <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Home</a></li>
+    <li data-menuanchor="secondPage"><a href="#secondPage">About</a></li>
+    <li data-menuanchor="3rdPage"><a href="#3rdPage">Member</a></li>
+</ul>
+
+<div id="fullpage">
+    <div class="section active" id="section0" style="padding-bottom: 0;">
+		<video class="home-mv-video" src="mov/codefornagoya.mov" poster="mov/codefornagoya.jpg" autoplay loop ></video>
+		<div class="home-mv-dot"></div>
+		<div class="home-title">
+			<img alt="title" src="imgs/title.png">
+		</div>
+    </div>
+    <div class="section " id="section1">
+        <div class="slide" id="slide1">
+            <div class="intro">
+                <h1>Around the world scrolling</h1>
+                <p>Go to the first section and scroll up or to the last one and scroll down to see how it works.</p>
+            </div>
+        </div>
+        <div class="slide active" id="slide2">
+            <h1>Slide 2</h1>
+        </div>
+        <div class="slide" id="slide3">
+            <h1>Slide 3</h1>
+        </div>
+
+    </div>
+    <div class="section" id="section2">
+        <div class="intro">
+            <h1>Scroll Down</h1>
+            <p>And it will animate down to the first section</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
