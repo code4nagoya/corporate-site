@@ -79,6 +79,7 @@ body {
 }
 
 .wrap {
+  margin-top:
   margin-left: auto;
   margin-right: auto;
   width: 960px;
@@ -241,62 +242,10 @@ p {
   position: relative;
 }
 
-#examplesList {
-  display: none;
-  background: #282828;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  padding: 20px;
-  float: left;
-  position: absolute;
-  bottom: 29px;
-  right: 0;
-  width: 638px;
-  text-align: left;
-}
-
-#examplesList ul {
-  padding: 0;
-}
-
-#examplesList ul li {
-  display: block;
-  margin: 5px 0;
-}
-
-#examplesList ul li a {
-  color: #BDBDBD;
-  margin: 0;
-}
-
-#examplesList ul li a:hover {
-  color: #f2f2f2;
-}
-
-#examplesList .column {
-  float: left;
-  margin: 0 20px 0 0;
-}
-
-#examplesList h3 {
-  color: #f2f2f2;
-  font-size: 1.2em;
-  margin: 0 0 15px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
-  padding: 0 0 5px 0;
-}
-
-/* Demos Menu
- * --------------------------------------- */
-#demosMenu {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  z-index: 999;
+.thumbnail{
+  border-radius: 125px;
+  height: 250px;
+  width: 250px;
 }
 
 /* Top backgrand
@@ -321,9 +270,55 @@ p {
   background-size: cover;
   background: url("./imgs/dot_01_bk.png") 0 0;
   opacity: 0.4;
+  z-index: 10;
 }
 .home-title {
   position: relative;
   text-align: center;
   margin: auto;
+  z-index: 999;
+}
+/* Product backgrand
+ * --------------------------------------- */
+#landscouter {
+  background-image: url(imgs/landscouter_bg.jpg);
+  padding: 6% 0 0 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#hikyoekirank {
+  background-image: url(imgs/hikyoekirank_bg.jpg);
+  padding: 6% 0 0 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.product-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  background-size: cover;
+  background: url("./imgs/dot_01_bk.png") 0 0;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+.product-center-box {
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 900px;
+  z-index: 999;
 }

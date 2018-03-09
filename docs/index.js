@@ -9,13 +9,10 @@ $(document).ready(function(){
 
       afterLoad: function(anchorLink, index){
           var loadedSection = $(this);
-
           //using index
-          if(index == 1){
-            var video = document.querySelector('video');
+          if (index == 1) {
+              var video = document.querySelector('video');
               video.play();
-              var height = $('.home-mv-video').height();
-              $('.home-mv-dot').height(height);
           }
         }
     });

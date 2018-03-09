@@ -9,7 +9,6 @@
     <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
     <meta name="Resource-type" content="Document" />
 
-    <link rel="stylesheet" type="text/css" href="vendors/materialize/css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" href="vendors/fullpage/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="shortcut icon" href="icon.png">
@@ -40,13 +39,13 @@
 
 <div id="fullpage">
     <div class="section active" id="section0" style="padding-bottom: 0;">
-    <video class="home-mv-video" src="mov/codefornagoya.mov" poster="mov/codefornagoya.jpg" autoplay loop ></video>
-    <div class="home-mv-dot"></div>
-    <div class="home-title">
-      <img alt="title" src="imgs/title.png">
+        <video class="home-mv-video" src="mov/codefornagoya.mov" poster="mov/codefornagoya.jpg" loop muted data-autoplay ></video>
+        <div class="home-mv-dot"></div>
+        <div class="home-title">
+            <img alt="title" src="imgs/title.png">
+        </div>
     </div>
-    </div>
-   <div class="section" id="section1" style="background-color: #444;">
+    <div class="section " id="section1">
         <div class="intro">
             <img src="imgs/logo.png" alt="logo" style="height: 200px;">
             <div style="height: 50px;"></div>
@@ -61,17 +60,37 @@
         </div>
     </div>
     <div class="section " id="section2">
-        <div class="slide" id="slide1">
-            <div class="intro">
-                <h1>Around the world scrolling</h1>
-                <p>Go to the first section and scroll up or to the last one and scroll down to see how it works.</p>
+        <div class="slide active" id="landscouter">
+            <div class="product-dot"></div>
+            <div class="product-center-box">
+               <a href="https://app.code4.nagoya/ls/" target="_blank">
+                   <img src="imgs/landscouter.png" alt="image" class="thumbnail" style="">
+               </a>
+                <h1>土地スカウター</h1>
+                <br>
+                <p>
+                「土地スカウター」とは 生命体ではなく土地の戦闘力を計測する 表示するWebアプリケーションです。
+                過去の災害情報や、津波予測、将来の地震発生の可能性などのオープンデータを
+                元に算出された戦闘力（災害リスクに対する強度）を表示します。
+                </p>
             </div>
         </div>
-        <div class="slide active" id="slide2">
-            <h1>Slide 2</h1>
-        </div>
-        <div class="slide" id="slide3">
-            <h1>Slide 3</h1>
+        <div class="slide " id="hikyoekirank">
+            <div class="product-dot"></div>
+            <div class="product-center-box">
+                <a href="http://www.livlog.xyz/hikyoekirank/" target="_blank">
+                    <img src="imgs/hikyoekirank.png" alt="image" class="thumbnail" style="">
+                </a>
+                <h1>秘境駅ランキング</h1>
+                <br>
+                <p>
+                「秘境駅ランキング」ではオープンデータを元に秘境駅のランキングを判定しています。
+                RESAS-APIの人口構成と観光資源、駅データ.jpの駅情報、国土数値情報の駅別乗降客数のデータを元に
+                秘境度、雰囲気、列車到達難易度、 外部到達難易度、鉄道遺産指数の項目を20点満点で判定し、総合評価を算出しています。
+                本サイトはオープンデータのネガティブな部分を見える化することで、
+                秘境駅という新たな価値の発見と地域の活性化に役立つことを考えています。
+                </p>
+            </div>
         </div>
 
     </div>
