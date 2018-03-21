@@ -36,6 +36,7 @@
     <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Home</a></li>
     <li data-menuanchor="secondPage"><a href="#secondPage">About</a></li>
     <li data-menuanchor="3rdPage"><a href="#3rdPage">Product</a></li>
+    <li data-menuanchor="4thpage"><a href="#4thpage">Contact</a></li>
     <li data-menuanchor="blog"><a href="https://code4nagoya.tumblr.com" target="_blank">Blog</a></li>
 </ul>
 
@@ -96,7 +97,34 @@
         </div>
 
     </div>
+    <div class="section " id="section3">
+        <div class="siimple-content siimple-content--small" style="text-align: left;">
+            <div class="siimple-form">
+                <div class="siimple-form-title">お問い合わせ</div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">名前:</div>
+                    <input type="text" class="siimple-input siimple-input--fluid" placeholder="あなたの名前">
+                </div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">メールアドレス:</div>
+                    <input type="text" class="siimple-input siimple-input--fluid" placeholder="mail@example.com">
+                </div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">タイトル:</div>
+                    <input type="text" class="siimple-input siimple-input--fluid" placeholder="タイトル">
+                </div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">内容:</div>
+                    <textarea class="siimple-textarea siimple-textarea--fluid" rows="5"></textarea>
+                </div>
 
+                <div class="siimple-form-field">
+                    <div class="siimple-btn siimple-btn--blue" onClick="sendMail()">Send comment</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
