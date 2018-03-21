@@ -25,9 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
     <script type="text/javascript" src="vendors/fullpage/jquery.fullPage.min.js"></script>
-    <script type="text/javascript" src="vendors/mailchimp-mandrill-api-js/mandrill.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="mail.js"></script>
 
 </head>
 <body>
@@ -36,6 +34,7 @@
     <li data-menuanchor="firstPage" class="active"><a href="#firstPage">Home</a></li>
     <li data-menuanchor="secondPage"><a href="#secondPage">About</a></li>
     <li data-menuanchor="3rdPage"><a href="#3rdPage">Product</a></li>
+    <li data-menuanchor="4thpage"><a href="#4thpage">Contact</a></li>
     <li data-menuanchor="blog"><a href="https://code4nagoya.tumblr.com" target="_blank">Blog</a></li>
 </ul>
 
@@ -96,7 +95,32 @@
         </div>
 
     </div>
+    <div class="section " id="section3">
+        <div class="siimple-content siimple-content--small" style="text-align: left;">
 
+            <form id="jquery_form"  class="siimple-form">
+                <div class="siimple-form-title">お問い合わせ</div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">名前:</div>
+                    <input type="text" name="your-name" class="siimple-input siimple-input--fluid" placeholder="あなたの名前">
+                </div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">メールアドレス:</div>
+                    <input type="email" name="email" class="siimple-input siimple-input--fluid" placeholder="mail@example.com">
+                </div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">タイトル:</div>
+                    <input type="text" name="subject" class="siimple-input siimple-input--fluid" placeholder="タイトル">
+                </div>
+                <div class="siimple-form-field">
+                    <div class="siimple-form-field-label">内容:</div>
+                    <textarea name="comment" class="siimple-textarea siimple-textarea--fluid" rows="5"></textarea>
+                </div>
+                <input type="submit" name="send" class="siimple-btn siimple-btn--blue" value="Send comment" />
+            </form>
+        </div>
+
+    </div>
 </div>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -107,6 +131,57 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-115432015-1');
+</script>
+<script>
+  //update this with your $form selector
+  var form_id = "jquery_form";
+
+  var data = {
+    "access_token": "ny28r975rcz469hmmx98l9tl"
+  };
+
+  function onSuccess() {
+    // remove this to avoid redirect
+    window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+  }
+
+  function onError(error) {
+    // remove this to avoid redirect
+    window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+  }
+
+  var sendButton = $("#" + form_id + " [name='send']");
+
+  function send() {
+    sendButton.val('Sending…');
+    sendButton.prop('disabled',true);
+
+    var yourName = $("#" + form_id + " [name='your-name']").val();
+    var address = $("#" + form_id + " [name='email']").val();
+    var subject = $("#" + form_id + " [name='subject']").val();
+    var comment = $("#" + form_id + " [name='comment']").val();
+    var text = "差出人: " + yourName + "<" + address + ">\n"
+             + "タイトル:" + subject + "\n"
+             + "\n"
+             + "メッセージ本文:" + "\n"
+             + comment;
+    data['subject'] = subject;
+    data['text'] = text;
+
+    $.post('https://postmail.invotes.com/send',
+      data,
+      onSuccess
+    ).fail(onError);
+
+    return false;
+  }
+
+  sendButton.on('click', send);
+
+  var $form = $("#" + form_id);
+  $form.submit(function( event ) {
+    event.preventDefault();
+  });
 </script>
 </body>
 </html>
