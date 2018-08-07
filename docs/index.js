@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   $('#fullpage').fullpage({
     sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
     anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
@@ -21,54 +20,39 @@ $(document).ready(function(){
     video.play();
   });
 
+  $('form').submit(function( event ) {
+	    event.preventDefault();
+	    $.post('https://www.livlog.xyz/postmail/send/0424b2cb051ea363748f3113a157d3a9/', $('form').serialize())
+	    //サーバーからの返信を受け取る
+	    .done( function(json) {
+	        var data = JSON.parse(json);
+	        if (data.status == 200) {
+	            $('#message').html('正常に送信しました。');
+	        } else  {
+	            var error = data.errors.errors[0];
+	            switch (error.code){
+	            case 10:
+	              $('#message').html('必須項目がありません。');
+	              break;
+	            case 20:
+	              $('#message').html('トークンが違います。');
+	              break;
+	            case 21:
+	              $('#message').html('送信回数が上限を超えています。');
+	              break;
+	            case 22:
+	                $('#message').html('指定以外のドメインからは送信できません。');
+	                break;
+	            default:
+	                $('#message').html('送信に失敗しました。');
+	                break;
+	            }
+	        }
+	    })
+	    //通信エラーの場合
+	    .fail( function() {
+	        $('#message').html('送信に失敗しました。');
+	    })
+	})
 
-  //update this with your $form selector
-  var form_id = "jquery_form";
-
-  var data = {
-    "access_token": "ny28r975rcz469hmmx98l9tl"
-  };
-
-  function onSuccess() {
-    // remove this to avoid redirect
-    window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
-  }
-
-  function onError(error) {
-    // remove this to avoid redirect
-    window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
-  }
-
-  var sendButton = $("#" + form_id + " [name='send']");
-
-  function send() {
-    sendButton.val('Sending…');
-    sendButton.prop('disabled',true);
-
-    var yourName = $("#" + form_id + " [name='your-name']").val();
-    var address = $("#" + form_id + " [name='email']").val();
-    var subject = $("#" + form_id + " [name='subject']").val();
-    var comment = $("#" + form_id + " [name='comment']").val();
-    var text = "差出人: " + yourName + "<" + address + ">\n"
-             + "タイトル:" + subject + "\n"
-             + "\n"
-             + "メッセージ本文:" + "\n"
-             + comment;
-    data['subject'] = subject;
-    data['text'] = text;
-
-    $.post('https://postmail.invotes.com/send',
-      data,
-      onSuccess
-    ).fail(onError);
-
-    return false;
-  }
-
-  sendButton.on('click', send);
-
-  var $form = $("#" + form_id);
-  $form.submit(function( event ) {
-    event.preventDefault();
-  });
 });

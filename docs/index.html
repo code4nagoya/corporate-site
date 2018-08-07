@@ -99,15 +99,15 @@
     <div class="section " id="section3">
         <div class="siimple-content siimple-content--small" style="text-align: left;">
 
-            <form id="jquery_form"  class="siimple-form">
+            <form class="siimple-form">
                 <div class="siimple-form-title">お問い合わせ</div>
                 <div class="siimple-form-field">
-                    <div class="siimple-form-field-label">名前:</div>
-                    <input type="text" name="your-name" class="siimple-input siimple-input--fluid" placeholder="あなたの名前">
+                    <div class="siimple-form-field-label">名前 (必須):</div>
+                    <input type="text" name="name" class="siimple-input siimple-input--fluid" placeholder="あなたの名前" required>
                 </div>
                 <div class="siimple-form-field">
-                    <div class="siimple-form-field-label">メールアドレス:</div>
-                    <input type="email" name="email" class="siimple-input siimple-input--fluid" placeholder="mail@example.com">
+                    <div class="siimple-form-field-label">メールアドレス (必須):</div>
+                    <input type="email" name="to" class="siimple-input siimple-input--fluid" placeholder="mail@example.com" required>
                 </div>
                 <div class="siimple-form-field">
                     <div class="siimple-form-field-label">タイトル:</div>
@@ -115,8 +115,9 @@
                 </div>
                 <div class="siimple-form-field">
                     <div class="siimple-form-field-label">内容:</div>
-                    <textarea name="comment" class="siimple-textarea siimple-textarea--fluid" rows="5"></textarea>
+                    <textarea name="body" class="siimple-textarea siimple-textarea--fluid" rows="5"></textarea>
                 </div>
+                <div id="message"></div>
                 <input type="submit" name="send" class="siimple-btn siimple-btn--blue" value="Send comment" />
             </form>
         </div>
