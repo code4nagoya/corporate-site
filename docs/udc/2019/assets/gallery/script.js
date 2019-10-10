@@ -171,7 +171,7 @@
         e.stopPropagation();
     });
 
-    var timeout2, timeout, flagShowLightBox=false;
+    var timeout2, timeout, objectLightBox;
 
     /* Lightbox Fit */
     function styleVideo($carouselItem, wndH, windowPadding, bottomPadding){
@@ -229,31 +229,29 @@
         var wndW = $(window).width() - windowPadding * 2;
         var wndH = $(window).height() - windowPadding * 2;
 
-        var $lightbox = $('.mbr-gallery .modal');
-        if (!$lightbox.length || !flagShowLightBox) {
+        if (!objectLightBox) {
             return;
         }
-        $lightbox.each(function() {
-            var $carouselItemActive, flagResize = false;
-            if ($(this).find('.modal-dialog .carousel-item.carousel-item-next, .modal-dialog .carousel-item.carousel-item-prev').length){
-                $carouselItemActive = $(this).find('.modal-dialog .carousel-item.carousel-item-next, .modal-dialog .carousel-item.carousel-item-prev');
-            }
-            else{
-                $carouselItemActive = $(this).find('.modal-dialog .carousel-item.active');
-                flagResize = true;
-            }
 
-            if($carouselItemActive[0].classList.contains('video-container')){
-                styleVideo($carouselItemActive, wndH, windowPadding, bottomPadding);
-            }
-            else{
-                styleImg($carouselItemActive, wndH, wndW, windowPadding, bottomPadding);
-            }
+        var $carouselItemActive, flagResize = false;
+        if (objectLightBox.find('.modal-dialog .carousel-item.carousel-item-next, .modal-dialog .carousel-item.carousel-item-prev').length){
+            $carouselItemActive = objectLightBox.find('.modal-dialog .carousel-item.carousel-item-next, .modal-dialog .carousel-item.carousel-item-prev');
+        }
+        else{
+            $carouselItemActive = objectLightBox.find('.modal-dialog .carousel-item.active');
+            flagResize = true;
+        }
 
-            clearTimeout(timeout);
+        if($carouselItemActive[0].classList.contains('video-container')){
+            styleVideo($carouselItemActive, wndH, windowPadding, bottomPadding);
+        }
+        else{
+            styleImg($carouselItemActive, wndH, wndW, windowPadding, bottomPadding);
+        }
 
-            timeout = setTimeout( timeOutCarousel, 200, $(this), wndW, wndH, windowPadding, bottomPadding, flagResize);
-        });
+        clearTimeout(timeout);
+
+        timeout = setTimeout( timeOutCarousel, 200, objectLightBox, wndW, wndH, windowPadding, bottomPadding, flagResize);
 
     }
 
@@ -273,7 +271,7 @@
             }
         }, 500);
 
-        flagShowLightBox = true;
+        objectLightBox = $(e.target);
 
         fitLightbox();
 
@@ -304,6 +302,6 @@
             player.pauseVideo ? player.pauseVideo() : player.pause();
         });
 
-        flagShowLightBox = false;
+        objectLightBox = null;
     });
 }(jQuery));
