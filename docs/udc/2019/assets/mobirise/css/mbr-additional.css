@@ -1336,7 +1336,7 @@ section.lazy-placeholder:after {
 }
 .cid-rvkm7SGSDC {
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   background-color: #ffffff;
 }
 .cid-rvkm7SGSDC .mbr-section-subtitle {
@@ -1344,6 +1344,12 @@ section.lazy-placeholder:after {
 }
 .cid-rvkm7SGSDC H2 {
   text-align: center;
+  color: #000000;
+}
+.cid-rFwO5cDiL7 {
+  padding-top: 0px;
+  padding-bottom: 60px;
+  background-color: #ffffff;
 }
 .cid-r2cLZNZG5G {
   padding-top: 30px;
