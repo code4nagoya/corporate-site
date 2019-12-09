@@ -52,7 +52,7 @@
     "favicon": "@PROJECT_PATH@/assets/images/logo-128x128-1.png",
     "noImageResize": "",
     "publishType": "local",
-    "publishPath": "file:///Users/naoto/GitHub/code4nagoya/MySite/docs/udc/2019"
+    "publishPath": "file:///Y:/home/naoto/GitHub/code4nagoya/MySite/docs/udc"
   },
   "pages": {
     "index.html": {
