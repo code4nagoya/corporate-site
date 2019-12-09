@@ -1632,6 +1632,18 @@ section.lazy-placeholder:after {
   transition: 0.2s background ease-in-out;
   background: linear-gradient(to left, #554346, #45505b) !important;
 }
+.cid-rK9p1WUqrs {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  background-color: #ffffff;
+}
+.cid-rK9p1WUqrs P {
+  color: #767676;
+}
+.cid-rK9p1WUqrs .mbr-text,
+.cid-rK9p1WUqrs .mbr-section-btn {
+  color: #000000;
+}
 .cid-rGUx6CkOFH {
   padding-top: 90px;
   padding-bottom: 90px;
