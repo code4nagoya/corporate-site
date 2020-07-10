@@ -58,7 +58,7 @@
         "main": true,
         "title": "UDC2020 愛知ブロック",
         "meta_descr": "アーバンデータチャレンジはAIGIDが主催する公共データを活用したアプリやサービスの一般参加型のコンテストです．愛知拠点はCode for Nagoya，Code for Mikawa，Code for Aichi，Code for Toyotaが\n一体となって地域課題の解決に取り組みます．",
-        "header_custom": "<meta property=\"og:title\" content=\"UDC2019 愛知ブロック\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:url\" content=\"https://www.code4.nagoya/udc/2020/index.html\" />\n<meta property=\"og:image\" content=\"https://www.code4.nagoya/udc/2020/assets/images/logo-1-300x300.png\" />",
+        "header_custom": "<meta property=\"og:title\" content=\"UDC2020 愛知ブロック\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:url\" content=\"https://www.code4.nagoya/udc/2020/index.html\" />\n<meta property=\"og:image\" content=\"https://www.code4.nagoya/udc/2020/assets/images/logo-1-300x300.png\" />",
         "footer_custom": "",
         "html_before": ""
       },
