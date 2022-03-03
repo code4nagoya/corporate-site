@@ -2,9 +2,8 @@ $(document).ready(function(){
 
   $('#fullpage').fullpage({
     sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
-    anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+    anchors: ['home', 'about', 'product', 'contact', 'lastPage'],
     menu: '#menu',
-
     afterLoad: function(anchorLink, index){
         var loadedSection = $(this);
         //using index
