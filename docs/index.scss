@@ -86,10 +86,17 @@ p {
   color: #fff;
 }
 
-.intro p {
-  width: 50%;
-  margin: 0 auto;
-  font-size: 1.5em;
+.intro {
+  p {
+    width: 50%;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.5em;
+    // min-width: 50%;
+  }
+  img {
+    height: 200px;
+  }
 }
 
 .section {
@@ -236,6 +243,58 @@ p {
   object-fit: cover;
 }
 
+/* mobile css
+ * --------------------------------------- */
+
+@media screen and (max-width: 640px) {
+  .wrap {
+    // margin-top:
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 1.5em;
+    color: #fff;
+  }
+  
+  p {
+    font-size: 1em !important;
+    color: #fff;
+  }
+  
+  .intro {
+    p {
+      width: 80%;
+      max-width: 100%;
+      margin: 0 auto;
+      font-size: 1.5em;
+      // min-width: 50%;
+    }
+    img {
+      height: 120px;
+    }
+  }
+
+  .product-outer {
+    .product-box {
+      h1 {
+        margin-top: 24px;
+        font-size: 1.8em;
+      }
+      p {
+        width: 80%;
+        max-width: 100%;
+        margin: 0 auto;
+        font-size: 1.5em;
+        // min-width: 50%;
+      }
+    }
+  }
+}
+
 /* Top backgrand
  * --------------------------------------- */
 
@@ -267,7 +326,11 @@ p {
   position: relative;
   text-align: center;
   margin: auto;
+  max-width: 100%;
   z-index: 999;
+  img {
+    max-width: 90%;
+  }
 }
 
 /* Product backgrand
@@ -344,4 +407,8 @@ p {
     height: auto;
     z-index: 999;
   }
+}
+
+.fluid-width {
+  width: 95%;
 }
