@@ -1,8 +1,9 @@
 $(document).ready(function(){
 
   $('#fullpage').fullpage({
+	licenseKey: 'YOUR_KEY_HERE',
     sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
-    anchors: ['home', 'about', 'product', 'contact', 'lastPage'],
+    anchors: ['home', 'about', 'product', 'timeline', 'contact'],
     menu: '#menu',
     afterLoad: function(anchorLink, index){
         var loadedSection = $(this);
