@@ -1,10 +1,12 @@
 $(document).ready(function(){
 
   $('#fullpage').fullpage({
-	licenseKey: 'YOUR_KEY_HERE',
+	licenseKey: null,
     sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
     anchors: ['home', 'about', 'product', 'timeline', 'contact'],
     menu: '#menu',
+	autoScrolling: false,
+	scrollHorizontally: false,
     afterLoad: function(anchorLink, index){
         var loadedSection = $(this);
         //using index
