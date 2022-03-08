@@ -26,9 +26,3 @@ https://mobirise.com/ja/
 3. Mobirise上で編集する
 4. Mobirise上でローカルリポジトリにPublishする
 5. ローカルからGithubにPushする
-
-## License
-
-These codes are licensed under CC0.
-
-[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.ja)
