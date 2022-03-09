@@ -13,7 +13,7 @@ $(document).ready(function() {
   
 	$('#fullpage').fullpage({
 		licenseKey: null,
-		sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
+		sectionsColor: ['#000', '#f6ab00', '#7baabe', '#e8eff5', '#4bbfc3'],
 		anchors: ['home', 'about', 'product', 'timeline', 'contact'],
 		menu: '#menu',
 		autoScrolling: false,
