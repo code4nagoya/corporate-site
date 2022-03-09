@@ -34,9 +34,11 @@
         </script>
     <![endif]-->
 
+    <script src="https://kit.fontawesome.com/e1d3e53513.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="vendors/vertical-timeline/assets/js/main.js"></script>
     <script type="text/javascript" src="index.js"></script>
 
 </head>
@@ -46,6 +48,7 @@
     <li data-menuanchor="home" class="active"><a href="#home">Home</a></li>
     <li data-menuanchor="about"><a href="#about">About</a></li>
     <li data-menuanchor="product"><a href="#product">Product</a></li>
+    <li data-menuanchor="timeline"><a href="#timeline">Timeline</a></li>
     <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
     <li data-menuanchor="blog"><a href="https://code4nagoya.tumblr.com" target="_blank">Blog</a></li>
     <li data-menuanchor="flickr"><a href="https://www.flickr.com/people/156372115@N05/" target="_blank">Flickr</a></li>
@@ -156,8 +159,48 @@
         </div>
 
     </div>
+
     <div class="section " id="section3">
-        <div class="siimple-content siimple-content--small" style="text-align: left;">
+        <section class="cd-timeline js-cd-timeline scroll" style="text-align: left;">
+            <div id="history" class="container max-width-lg cd-timeline__container">
+              <div class="cd-timeline__block">
+                <div class="cd-timeline__img cd-timeline__img--movie">
+                  <img src="vendors/vertical-timeline/assets/img/cd-icon-movie.svg" alt="Movie">
+                </div> <!-- cd-timeline__img -->
+        
+                <div class="cd-timeline__content text-component">
+                  <h2>Title of section 2</h2>
+                  <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+                  
+                  <div class="flex justify-between items-center">
+                    <span class="cd-timeline__date">Jan 18</span>
+                    <a href="#0" class="btn btn--subtle">Read more</a>
+                  </div>
+                </div> <!-- cd-timeline__content -->
+              </div> <!-- cd-timeline__block -->
+              <div class="cd-timeline__block">
+                <div class="cd-timeline__img cd-timeline__img--movie">
+                  <img src="vendors/vertical-timeline/assets/img/cd-icon-movie.svg" alt="Movie">
+                </div> <!-- cd-timeline__img -->
+        
+                <div class="cd-timeline__content text-component">
+                  <h2>Title of section 2</h2>
+                  <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+                  
+                  <div class="flex justify-between items-center">
+                    <span class="cd-timeline__date">Jan 18</span>
+                    <a href="#0" class="btn btn--subtle">Read more</a>
+                  </div>
+                </div> <!-- cd-timeline__content -->
+              </div> <!-- cd-timeline__block -->    
+          
+            </div>
+          </section> <!-- cd-timeline -->
+
+    </div>
+
+    <div class="section " id="section4">
+        <div class="container siimple-content siimple-content--small" style="text-align: left;">
             <form class="siimple-form">
                 <div class="siimple-form-title">お問い合わせ</div>
                 <div class="siimple-form-field">
@@ -177,7 +220,7 @@
                     <textarea name="body" class="siimple-textarea fluid-width" rows="5"></textarea>
                 </div>
                 <div id="message"></div>
-                <input type="submit" name="send" class="siimple-btn siimple-btn--blue" value="Send comment" />
+                <input type="submit" name="send" class="siimple-btn siimple-btn--blue" value="送信" />
             </form>
         </div>
 

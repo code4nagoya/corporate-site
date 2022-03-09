@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("./vendors/vertical-timeline/assets/css/style.css");
 /* Reset CSS
  * --------------------------------------- */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
@@ -79,6 +80,7 @@ h1 {
 
 p {
   font-size: 1em !important;
+  font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !important;
   color: #fff;
 }
 
@@ -227,6 +229,15 @@ p {
      object-fit: cover;
 }
 
+.scroll {
+  overflow: auto;
+  height: 100%;
+}
+
+.font-white {
+  color: white;
+}
+
 /* mobile css
  * --------------------------------------- */
 @media screen and (max-width: 640px) {
@@ -278,7 +289,7 @@ p {
 }
 
 .home-mv-dot {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   min-width: 100%;

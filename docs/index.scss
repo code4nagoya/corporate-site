@@ -1,3 +1,4 @@
+@import url('./vendors/vertical-timeline/assets/css/style.css'); 
 /* Reset CSS
  * --------------------------------------- */
 
@@ -83,6 +84,7 @@ h1 {
 
 p {
   font-size: 1em !important;
+  font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !important;
   color: #fff;
 }
 
@@ -243,6 +245,15 @@ p {
   object-fit: cover;
 }
 
+.scroll {
+  overflow: auto; 
+  height: 100%;
+}
+
+.font-white {
+  color: white;
+}
+
 /* mobile css
  * --------------------------------------- */
 
@@ -309,7 +320,7 @@ p {
 }
 
 .home-mv-dot {
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   min-width: 100%;
