@@ -33,27 +33,34 @@ $(document).ready(function() {
 		video.play();
 	});
 
-	$('#history').html('');
-	for (let i = 0; i < 5; i++) {
-		const html = `
-		<div class="cd-timeline__block">
-			<div class="cd-timeline__img cd-timeline__img--movie">
-			<img src="vendors/vertical-timeline/assets/img/cd-icon-movie.svg" alt="Movie">
-			</div> <!-- cd-timeline__img -->
-
-			<div class="cd-timeline__content text-component">
-			<h2>Title of section 2</h2>
-			<p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
-			
-			<div class="flex justify-between items-center">
-				<span class="cd-timeline__date">Jan 18</span>
-				<a href="#0" class="btn btn--subtle">Read more</a>
-			</div>
-			</div> <!-- cd-timeline__content -->
-	  	</div> <!-- cd-timeline__block -->
-		`;
-		$('#history').append(html);
-	}
+	$.get('event.json')
+	//サーバーからの返信を受け取る
+	.done(function(ret) {
+		console.log(ret);
+		$('#history').html('');
+		for (data of ret) {
+			const html = `
+			<div class="cd-timeline__block">
+				<div class="cd-timeline__img cd-timeline__img--movie">
+				<i class="font-white fa-solid fa-calendar-days"></i>
+				</div> <!-- cd-timeline__img -->
+	
+				<div class="cd-timeline__content text-component">
+				<h2>${data.title}</h2>
+				<p class="color-contrast-medium">
+					${data.content}
+				</p>
+				
+				<div class="flex justify-between items-center">
+					<span class="cd-timeline__date">${data.date}</span>
+					<a href="${data.url}" target="_blank" class="btn btn--subtle">Read more</a>
+				</div>
+				</div> <!-- cd-timeline__content -->
+			  </div> <!-- cd-timeline__block -->
+			`;
+			$('#history').append(html);
+		}
+	});
 
 	$('form').submit(function(event) {
 		event.preventDefault();
@@ -87,7 +94,7 @@ $(document).ready(function() {
 		//通信エラーの場合
 		.fail(function() {
 			$('#message').html('送信に失敗しました。');
-		})
-	})
+		});
+	});
   
 });

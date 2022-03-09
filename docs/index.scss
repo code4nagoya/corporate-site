@@ -84,6 +84,7 @@ h1 {
 
 p {
   font-size: 1em !important;
+  font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Sans', 'ヒラギノ角ゴシック', YuGothic, 'Yu Gothic', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif !important;
   color: #fff;
 }
 
@@ -247,6 +248,10 @@ p {
 .scroll {
   overflow: auto; 
   height: 100%;
+}
+
+.font-white {
+  color: white;
 }
 
 /* mobile css
