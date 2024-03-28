@@ -53,7 +53,7 @@ $(document).ready(function () {
             <div class="slide product-outer product-backgrand" style="background-image: url(${data.background});">
                <div class="product-dot"></div>
                <div class="product-box">
-                  <a href="${data.title}" target="_blank">
+                  <a href="${data.url}" target="_blank">
                   <img src="${data.icon}" alt="image" class="thumbnail" style="">
                   </a>
                   <h1>${data.title}</h1>
