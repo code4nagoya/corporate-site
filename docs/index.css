@@ -361,7 +361,6 @@ p {
   height: auto;
   background-size: cover;
   background: url("./imgs/dot_01_bk.png") 0 0;
-  opacity: 0.4;
   z-index: 10;
 }
 .product-outer .product-box {
