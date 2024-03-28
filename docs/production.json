@@ -52,7 +52,7 @@
         "title": "今ここ。位置情報共有アプリ",
         "description": "このサービスは、自分の居場所を地図上で把握し「今ここ。」と伝えるためのアプリケーションです。災害が発生した時の安否確認、犯罪目撃情報や災害発生箇所の位置情報の共有、友人などとの待ち合わせ、などなど、あらゆる場面で利用できます。",
         "icon": "imgs/iamherenow.png",
-        "background": "imgs/iamherenow_bg",
+        "background": "imgs/iamherenow_bg.png",
         "url": "https://linkevery2s.github.io/iamherenow/"
     },
     {
