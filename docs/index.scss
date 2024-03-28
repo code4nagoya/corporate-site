@@ -352,6 +352,13 @@ p {
 
 /* Product backgrand
  * --------------------------------------- */
+.product-backgrand {
+  padding: 6% 0 0 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 #landscouter {
   background-image: url(imgs/landscouter_bg.jpg);

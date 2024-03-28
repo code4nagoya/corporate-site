@@ -1,0 +1,37 @@
+[
+    {
+        "title": "土地スカウター",
+        "description": "「土地スカウター」とは 生命体ではなく土地の戦闘力を計測する 表示するWebアプリケーションです。過去の災害情報や、津波予測、将来の地震発生の可能性などのオープンデータを元に算出された戦闘力（災害リスクに対する強度）を表示します。",
+        "icon": "imgs/landscouter.png",
+        "background": "imgs/landscouter_bg.jpg",
+        "url": "https://app.code4.nagoya/ls/"
+    },
+    {
+        "title": "秘境駅ランキング",
+        "description": "「秘境駅ランキング」ではオープンデータを元に秘境駅のランキングを判定しています。RESAS-APIの人口構成と観光資源、駅データ.jpの駅情報、国土数値情報の駅別乗降客数のデータを元に秘境度、雰囲気、列車到達難易度、外部到達難易度、鉄道遺産指数の項目を20点満点で判定し、総合評価を算出しています。本サイトはオープンデータのネガティブな部分を見える化することで、秘境駅という新たな価値の発見と地域の活性化に役立つことを考えています。",
+        "icon": "imgs/hikyoekirank.png",
+        "background": "imgs/hikyoekirank_bg.jpg",
+        "url": "http://www.livlog.xyz/hikyoekirank/"
+    },
+    {
+        "title": "ロジねこ",
+        "description": "あなたの街のねこを撮って作る、あなただけのねこずかん。路地裏にはねこがいるかも？さあ、ねこを探しにでかけよう。ねこを見つけて、写真を撮影して、ねこずかんが作成できます。機械学習でねこの住みやすい場所を解析しています。AIで日本ねこの種類を判定しています。見つけたねこをTwitterに投稿できます。",
+        "icon": "imgs/rojineco.png",
+        "background": "imgs/rojineco_bg.jpg",
+        "url": "https://rojine.co/"
+    },
+    {
+        "title": "CivicTech俯瞰図鑑",
+        "description": "シビックテックに新しく興味をもってくれた人に、各地シビックテックコミュニティの特徴をわかりやすく伝えたい。既にシビックテック活動をしている人にも、他の地域のシビックテックコミュニティの特徴がわかるようにしたい。そこで、各地のシビックテックコミュニティの性格や得意分野がわかるような「俯瞰図」を作成しました。",
+        "icon": "imgs/brigade-visualizer.png",
+        "background": "imgs/brigade-visualizer_bg.jpg",
+        "url": "https://siramatu.github.io/brigade-visualizer/"
+    },
+    {
+        "title": "言の場",
+        "description": "言葉にはその由来があり、その場所には歴史があります。「言の場」はその由来と場所を紐づけて、日本全国の地名の由来をカルタで見つけることができます。「言の場」では、日本のいろいろな地名について、その語源と由来、歴史、地理的変遷などを見つけることができます。",
+        "icon": "imgs/kotonoba.png",
+        "background": "imgs/kotonoba_bg.jpg",
+        "url": "https://kotono.ba/"
+    }
+]

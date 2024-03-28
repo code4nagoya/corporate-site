@@ -234,17 +234,14 @@ p {
     width: 960px;
     position: relative;
   }
-
   h1 {
     font-size: 1.5em;
     color: #fff;
   }
-
   p {
     font-size: 1em !important;
     color: #fff;
   }
-
   .intro p {
     width: 80%;
     max-width: 100%;
@@ -254,7 +251,6 @@ p {
   .intro img {
     height: 120px;
   }
-
   .product-outer .product-box h1 {
     margin-top: 24px;
     font-size: 1.8em;
@@ -305,6 +301,13 @@ p {
 
 /* Product backgrand
  * --------------------------------------- */
+.product-backgrand {
+  padding: 6% 0 0 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 #landscouter {
   background-image: url(imgs/landscouter_bg.jpg);
   padding: 6% 0 0 0;
