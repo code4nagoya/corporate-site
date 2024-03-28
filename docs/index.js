@@ -1,6 +1,6 @@
 $(function () {
   const video = $("video");
-  video.on("loadeddata", function () {
+  video.on("loadeddata", () => {
     video.get(0).play();
   });
 
@@ -54,25 +54,24 @@ $(function () {
       menu: "#menu",
       autoScrolling: false,
       scrollHorizontally: true,
-      afterLoad: function (anchorLink, index) {
+      afterLoad: (anchorLink, index) => {
         if (index === 1) {
           video.get(0).play();
         }
       },
-	});
-	// ページ読み込み時に高さを調整
-	$(".fp-tableCell").css("height", "");
-	  
+    });
+    // ページ読み込み時に高さを調整
+    $(".fp-tableCell").css("height", "");
   });
 
   // Form submission with error handling
-  $("form").submit(function (event) {
+  $("form").submit((event) => {
     event.preventDefault();
     $.post(
       "https://livlog.xyz/postmail/send/0424b2cb051ea363748f3113a157d3a9/",
       $(this).serialize()
     )
-      .done(function (json) {
+      .done((json) => {
         const data = JSON.parse(json);
         $("#message").html(
           data.status === 200
@@ -80,7 +79,7 @@ $(function () {
             : getErrorMessage(data.errors.errors[0].code)
         );
       })
-      .fail(function () {
+      .fail(() => {
         $("#message").html("送信に失敗しました。");
       });
   });
