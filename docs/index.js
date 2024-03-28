@@ -59,7 +59,10 @@ $(function () {
           video.get(0).play();
         }
       },
-    });
+	});
+	// ページ読み込み時に高さを調整
+	$(".fp-tableCell").css("height", "");
+	  
   });
 
   // Form submission with error handling
