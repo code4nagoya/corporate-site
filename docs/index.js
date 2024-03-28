@@ -1,7 +1,7 @@
 $(function () {
   const video = $("video");
   video.on("loadeddata", function () {
-    this.play();
+    video.get(0).play();
   });
 
   // loadData関数をPromiseを返すように変更
