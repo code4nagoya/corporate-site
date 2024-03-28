@@ -33,5 +33,40 @@
         "icon": "imgs/kotonoba.png",
         "background": "imgs/kotonoba_bg.jpg",
         "url": "https://kotono.ba/"
+    },
+        {
+        "title": "防災INSIGHT",
+        "description": "学習機能から避難場所、気象情報、ハザードマップまで、防災に関する様々な情報を学ぶことができる防災ハンドブックアプリです。",
+        "icon": "imgs/bsinsight.png",
+        "background": "imgs/bsinsight_bg.png",
+        "url": "https://linkevery2s.github.io/bsinsight/"
+    },
+    {
+        "title": "DP Note",
+        "description": "防災に関する考察サービスです。災害データ可視化や防災図解を通して、防災に必要なものは何か？どのように次世代に語り継いでいくのかを考えていきます。",
+        "icon": "imgs/dpnote.png",
+        "background": "imgs/dpnote_bg.png",
+        "url": "https://dpnote.netlify.app/"
+    },
+    {
+        "title": "今ここ。位置情報共有アプリ",
+        "description": "このサービスは、自分の居場所を地図上で把握し「今ここ。」と伝えるためのアプリケーションです。災害が発生した時の安否確認、犯罪目撃情報や災害発生箇所の位置情報の共有、友人などとの待ち合わせ、などなど、あらゆる場面で利用できます。",
+        "icon": "imgs/iamherenow.png",
+        "background": "imgs/iamherenow_bg",
+        "url": "https://linkevery2s.github.io/iamherenow/"
+    },
+    {
+        "title": "防災チャットボット「EYE」",
+        "description": "いつでもどこでも防災の情報提供やアドバイスを行うチャットボットアプリです。防災に関する知識、災害経験談、地震時の避難行動の仕方など、防災に関する様々な情報を教えてくれます。",
+        "icon": "imgs/bseye.png",
+        "background": "imgs/bseye_bg.png",
+        "url": "https://linkevery2s.github.io/eye/"
+    },
+    {
+        "title": "デジタル地球儀",
+        "description": "世界の国々や地形の情報を、デジタル地球儀にまとめました。世界の首都・国旗、日本の都道府県など、楽しんで地理を学びましょう！",
+        "icon": "imgs/digital-globe.png",
+        "background": "imgs/digital-globe_bg.png",
+        "url": "https://digital-globe.netlify.app/"
     }
 ]
