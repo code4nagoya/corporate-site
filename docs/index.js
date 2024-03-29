@@ -65,37 +65,41 @@ $(function () {
   });
 
   // Form submission with error handling
-  $("form").submit((event) => {
+  $("form").submit(function (event) {
     event.preventDefault();
     $.post(
-      "https://livlog.xyz/postmail/send/0424b2cb051ea363748f3113a157d3a9/",
-      $(this).serialize()
+      "https://www.livlog.xyz/postmail/send/0424b2cb051ea363748f3113a157d3a9/",
+      $("form").serialize()
     )
-      .done((json) => {
+      //サーバーからの返信を受け取る
+      .done(function (json) {
         const data = JSON.parse(json);
-        $("#message").html(
-          data.status === 200
-            ? "正常に送信しました。"
-            : getErrorMessage(data.errors.errors[0].code)
-        );
+        if (data.status == 200) {
+          $("#message").html("正常に送信しました。");
+        } else {
+          const error = data.errors.errors[0];
+          switch (error.code) {
+            case 10:
+              $("#message").html("必須項目がありません。");
+              break;
+            case 20:
+              $("#message").html("トークンが違います。");
+              break;
+            case 21:
+              $("#message").html("送信回数が上限を超えています。");
+              break;
+            case 22:
+              $("#message").html("指定以外のドメインからは送信できません。");
+              break;
+            default:
+              $("#message").html("送信に失敗しました。");
+              break;
+          }
+        }
       })
-      .fail(() => {
+      //通信エラーの場合
+      .fail(function () {
         $("#message").html("送信に失敗しました。");
       });
   });
-
-  const getErrorMessage = (code) => {
-    switch (code) {
-      case 10:
-        return "必須項目がありません。";
-      case 20:
-        return "トークンが違います。";
-      case 21:
-        return "送信回数が上限を超えています。";
-      case 22:
-        return "指定以外のドメインからは送信できません。";
-      default:
-        return "送信に失敗しました。";
-    }
-  };
 });
