@@ -38,7 +38,7 @@
         "title": "防災INSIGHT",
         "description": "学習機能から避難場所、気象情報、ハザードマップまで、防災に関する様々な情報を学ぶことができる防災ハンドブックアプリです。",
         "icon": "imgs/bsinsight.png",
-        "background": "imgs/bsinsight_bg.png",
+        "background": "imgs/bsinsight_bg.jpg",
         "url": "https://linkevery2s.github.io/bsinsight/"
     },
     {
