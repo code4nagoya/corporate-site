@@ -42,15 +42,17 @@ $(function () {
     </div>`;
 
   // 全てのloadData呼び出しをPromise.allでラップして、全ての読み込みが完了した後に処理を行う
-  Promise.allSettled([
-    loadData("event.json", "#history", eventTemplate),
-    loadData("production.json", "#section2", productTemplate),
-  ]).then((results) => {
-    results.forEach((result) => {
-      if (result.status === "rejected") {
-        console.error("data load failed", result.reason);
-      }
+  const eventRequest = loadData("event.json", "#history", eventTemplate)
+    .fail((error) => {
+      console.error("event.json load failed", error);
     });
+
+  const productRequest = loadData("production.json", "#section2", productTemplate)
+    .fail((error) => {
+      console.error("production.json load failed", error);
+    });
+
+  $.when(eventRequest, productRequest).always(() => {
     // データ読み込みが一部失敗してもfullPage.jsは初期化する
     new fullpage("#fullpage", {
       licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
