@@ -14,111 +14,97 @@ $(function () {
       });
   };
 
-	// var autoScrollingOption = function() {
-	// 	var usag = navigator.userAgent; //OSの情報取得
-	// 	var isMobile = (usag.indexOf('iPhone') > 0 || usag.indexOf('iPad') > 0) || usag.indexOf('iPod') > 0 || usag.indexOf('Android') > 0;
-	// 	if (isMobile) { //PCかスマホ条件分岐
-	// 		return true;
-	// 	} else {
-	// 		return false;
-	// 	}
-	// }
+  const eventTemplate = (data) => `
+    <div class="cd-timeline__block">
+      <div class="cd-timeline__img cd-timeline__img--movie">
+        <i class="font-white fa-solid fa-calendar-days"></i>
+      </div>
+      <div class="cd-timeline__content text-component">
+        <h2>${data.title}</h2>
+        <p class="color-contrast-medium">${data.content}</p>
+        <div class="flex justify-between items-center">
+          <span class="cd-timeline__date">${data.date}</span>
+          <a href="${data.url}" target="_blank" class="btn btn--subtle">Read more</a>
+        </div>
+      </div>
+    </div>`;
 
-	const safePlay = function(videoElement) {
-		if (!videoElement) return;
-		videoElement.muted = true;
-		videoElement.playsInline = true;
-		const playPromise = videoElement.play();
-		if (playPromise && typeof playPromise.catch === 'function') {
-			playPromise.catch(function() {
-				// Ignore autoplay restrictions until user interacts.
-			});
-		}
-	};
+  const productTemplate = (data) => `
+    <div class="slide product-outer product-backgrand" style="background-image: url(${data.background});">
+      <div class="product-dot"></div>
+      <div class="product-box">
+        <a href="${data.url}" target="_blank">
+          <img src="${data.icon}" alt="image" class="thumbnail">
+        </a>
+        <h1>${data.title}</h1>
+        <p>${data.description}</p>
+      </div>
+    </div>`;
 
-	new fullpage('#fullpage', {
-		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-		sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
-		anchors: ['home', 'about', 'product', 'timeline', 'contact'],
-		menu: '#menu',
-		autoScrolling: false,
-		scrollHorizontally: false,
-		afterLoad: function(origin, destination) {
-			if (destination && destination.index === 0) {
-				const video = document.querySelector('video');
-				safePlay(video);
-			}
-		}
-	});
+  // 全てのloadData呼び出しをPromise.allでラップして、全ての読み込みが完了した後に処理を行う
+  Promise.allSettled([
+    loadData("event.json", "#history", eventTemplate),
+    loadData("production.json", "#section2", productTemplate),
+  ]).then((results) => {
+    results.forEach((result) => {
+      if (result.status === "rejected") {
+        console.error("data load failed", result.reason);
+      }
+    });
+    // データ読み込みが一部失敗してもfullPage.jsは初期化する
+    new fullpage("#fullpage", {
+      licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+      sectionsColor: ["#000", "#f6ab00", "#7baabe", "#e8eff5", "#4bbfc3"],
+      anchors: ["home", "about", "product", "timeline", "contact"],
+      menu: "#menu",
+      autoScrolling: false,
+      scrollHorizontally: false,
+      afterLoad: function (origin, destination) {
+        if (destination && destination.index === 0) {
+          video.get(0).play();
+        }
+      },
+    });
+    // ページ読み込み時に高さを調整
+    $(".fp-tableCell").css("height", "");
+  });
 
-	const video = document.querySelector('video');
-	if (video) {
-		video.addEventListener('loadeddata', function() {
-			safePlay(video);
-		});
-	}
-
-	$.get('event.json')
-	//サーバーからの返信を受け取る
-	.done(function(ret) {
-		$('#history').html('');
-		for (data of ret) {
-			const html = `
-			<div class="cd-timeline__block">
-				<div class="cd-timeline__img cd-timeline__img--movie">
-				<i class="font-white fa-solid fa-calendar-days"></i>
-				</div> <!-- cd-timeline__img -->
-
-				<div class="cd-timeline__content text-component">
-				<h2>${data.title}</h2>
-				<p class="color-contrast-medium">
-					${data.content}
-				</p>
-
-				<div class="flex justify-between items-center">
-					<span class="cd-timeline__date">${data.date}</span>
-					<a href="${data.url}" target="_blank" class="btn btn--subtle">Read more</a>
-				</div>
-				</div> <!-- cd-timeline__content -->
-			  </div> <!-- cd-timeline__block -->
-			`;
-			$('#history').append(html);
-		}
-	});
-
-	$('form').submit(function(event) {
-		event.preventDefault();
-		$.post('https://www.livlog.xyz/postmail/send/0424b2cb051ea363748f3113a157d3a9/', $('form').serialize())
-		//サーバーからの返信を受け取る
-		.done(function(json) {
-			const data = JSON.parse(json);
-			if (data.status == 200) {
-				$('#message').html('正常に送信しました。');
-			} else {
-				const error = data.errors.errors[0];
-				switch (error.code) {
-					case 10:
-					$('#message').html('必須項目がありません。');
-					break;
-					case 20:
-					$('#message').html('トークンが違います。');
-					break;
-					case 21:
-					$('#message').html('送信回数が上限を超えています。');
-					break;
-					case 22:
-					$('#message').html('指定以外のドメインからは送信できません。');
-					break;
-					default:
-					$('#message').html('送信に失敗しました。');
-					break;
-				}
-			}
-		})
-		//通信エラーの場合
-		.fail(function() {
-			$('#message').html('送信に失敗しました。');
-		});
-	});
-
+  // Form submission with error handling
+  $("form").submit(function (event) {
+    event.preventDefault();
+    $.post(
+      "https://www.livlog.xyz/postmail/send/0424b2cb051ea363748f3113a157d3a9/",
+      $("form").serialize()
+    )
+      //サーバーからの返信を受け取る
+      .done(function (json) {
+        const data = JSON.parse(json);
+        if (data.status == 200) {
+          $("#message").html("正常に送信しました。");
+        } else {
+          const error = data.errors.errors[0];
+          switch (error.code) {
+            case 10:
+              $("#message").html("必須項目がありません。");
+              break;
+            case 20:
+              $("#message").html("トークンが違います。");
+              break;
+            case 21:
+              $("#message").html("送信回数が上限を超えています。");
+              break;
+            case 22:
+              $("#message").html("指定以外のドメインからは送信できません。");
+              break;
+            default:
+              $("#message").html("送信に失敗しました。");
+              break;
+          }
+        }
+      })
+      //通信エラーの場合
+      .fail(function () {
+        $("#message").html("送信に失敗しました。");
+      });
+  });
 });
