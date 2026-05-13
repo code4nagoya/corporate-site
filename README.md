@@ -1,20 +1,20 @@
-# www.code4.nagoya
+# code4.nagoya
 
-このリポジトリは https://www.code4.nagoya のホスティングのためのリポジトリです。
+このリポジトリは https://code4.nagoya のホスティングのためのリポジトリです。
 
-GitHub Pagesを使用し、カスタムドメインとして「www.code4.nagoya 」を設定しています。
+GitHub Pagesを使用し、カスタムドメインとして「code4.nagoya 」を設定しています。
 
 ## HTTPS対応
 
 現在はさくらインターネットのVPS上のnginxでHTTPSを処理してリバースプロキシでGitHub Pagesを読み込んでいます。
 
-よって、ブラウザはhttps://www.code4.nagoya にアクセスすると、さくらのVPSと通信しています。さくらのVPSはGitHub Pagesと通信しコンテンツを読み込み返します。
+よって、ブラウザはhttps://code4.nagoya にアクセスすると、さくらのVPSと通信しています。さくらのVPSはGitHub Pagesと通信しコンテンツを読み込み返します。
 
 ## コンテンツの編集について
 
 例えば以下のコンテツはMobiriseというツールを使って更新しています。
 
-https://www.code4.nagoya/event/2017/11/opendata/
+https://code4.nagoya/event/2017/11/opendata/
 
 Mobiriseについて
 https://mobirise.com/ja/
