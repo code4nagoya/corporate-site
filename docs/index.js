@@ -51,10 +51,10 @@ $(function () {
 		}
 	});
 
-	const video = document.querySelector('video');
-	if (video) {
-		video.addEventListener('loadeddata', function() {
-			safePlay(video);
+	const heroVideo = document.querySelector('video');
+	if (heroVideo) {
+		heroVideo.addEventListener('loadeddata', function() {
+			safePlay(heroVideo);
 		});
 	}
 
