@@ -254,6 +254,12 @@ p {
   color: white;
 }
 
+.max-width-initial {
+  max-width: initial !important;
+}
+
+
+
 /* mobile css
  * --------------------------------------- */
 
@@ -346,6 +352,13 @@ p {
 
 /* Product backgrand
  * --------------------------------------- */
+.product-backgrand {
+  padding: 6% 0 0 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 #landscouter {
   background-image: url(imgs/landscouter_bg.jpg);
@@ -399,7 +412,7 @@ p {
     height: auto;
     background-size: cover;
     background: url("./imgs/dot_01_bk.png") 0 0;
-    opacity: 0.4;
+    // opacity: 0.4;
     z-index: 10;
   }
   

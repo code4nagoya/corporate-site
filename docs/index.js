@@ -1,5 +1,18 @@
+$(function () {
+  const video = $("video");
+  video.on("loadeddata", () => {
+    video.get(0).play();
+  });
 
-$(document).ready(function() {
+  // loadData関数をPromiseを返すように変更
+  const loadData = (url, containerId, templateFunction) => {
+    return $.get(url) // Promiseを返す
+      .done(function (data) {
+        console.log(data);
+        const container = $(containerId).empty();
+        data.forEach((item) => container.append(templateFunction(item)));
+      });
+  };
 
 	// var autoScrollingOption = function() {
 	// 	var usag = navigator.userAgent; //OSの情報取得
