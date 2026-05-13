@@ -23,15 +23,15 @@ $(document).ready(function() {
 		}
 	};
 
-	$('#fullpage').fullpage({
+	new fullpage('#fullpage', {
 		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 		sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
 		anchors: ['home', 'about', 'product', 'timeline', 'contact'],
 		menu: '#menu',
 		autoScrolling: false,
 		scrollHorizontally: false,
-		afterLoad: function(anchorLink, index) {
-			if (index == 1) {
+		afterLoad: function(origin, destination) {
+			if (destination && destination.index === 0) {
 				const video = document.querySelector('video');
 				safePlay(video);
 			}
