@@ -42,11 +42,16 @@ $(function () {
     </div>`;
 
   // 全てのloadData呼び出しをPromise.allでラップして、全ての読み込みが完了した後に処理を行う
-  Promise.all([
+  Promise.allSettled([
     loadData("event.json", "#history", eventTemplate),
     loadData("production.json", "#section2", productTemplate),
-  ]).then(() => {
-    // 全てのデータの読み込みが完了した後にfullPage.jsを初期化
+  ]).then((results) => {
+    results.forEach((result) => {
+      if (result.status === "rejected") {
+        console.error("data load failed", result.reason);
+      }
+    });
+    // データ読み込みが一部失敗してもfullPage.jsは初期化する
     new fullpage("#fullpage", {
       licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
       sectionsColor: ["#000", "#f6ab00", "#7baabe", "#e8eff5", "#4bbfc3"],
