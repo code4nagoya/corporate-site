@@ -47,15 +47,15 @@ $(function () {
     loadData("production.json", "#section2", productTemplate),
   ]).then(() => {
     // 全てのデータの読み込みが完了した後にfullPage.jsを初期化
-    $("#fullpage").fullpage({
-      licenseKey: null,
+    new fullpage("#fullpage", {
+      licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
       sectionsColor: ["#000", "#f6ab00", "#7baabe", "#e8eff5", "#4bbfc3"],
       anchors: ["home", "about", "product", "timeline", "contact"],
       menu: "#menu",
       autoScrolling: false,
-      scrollHorizontally: true,
-      afterLoad: (anchorLink, index) => {
-        if (index === 1) {
+      scrollHorizontally: false,
+      afterLoad: function (origin, destination) {
+        if (destination && destination.index === 0) {
           video.get(0).play();
         }
       },
