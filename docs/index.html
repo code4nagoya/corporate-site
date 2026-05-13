@@ -1,58 +1,95 @@
 <!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml">
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Code for Nagoya - テクノロジーで街を楽しく！</title>
-      <meta name="author" content="Code for Nagoya" />
-      <meta name="description" content="「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。" />
-      <meta name="keywords"  content="Code,for,Nagoya,シビックテック,地域,課題,テクノロジー,解決" />
-      <meta name="Resource-type" content="Document" />
-      <meta property="og:site_name" content="Code for Nagoya">
-      <meta property="og:url" content="https://www.code4.nagoya/">
-      <meta property="og:title" content="Code for Nagoya - テクノロジーで街を楽しく！">
-      <meta property="og:description" content="「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。">
-      <meta property="og:image" content="https://www.code4.nagoya/thumbnail.png">
-      <meta property="og:type" content="article">
-      <meta property="twitter:card" content="summary_large_image">
-      <meta property="twitter:site" content="@code4nagoya">
-      <meta property="twitter:url" content="https://www.code4.nagoya/">
-      <meta property="twitter:title" content="Code for Nagoya - テクノロジーで街を楽しく！">
-      <meta property="twitter:description" content="「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。">
-      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@3.0.0/dist/siimple.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple-colors@0.2.0/dist/siimple-colors.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" type="text/css" href="index.css" />
-      <link rel="shortcut icon" href="icon.png">
-      <!--[if IE]>
-      <script type="text/javascript">
-         var console = { log: function() {} };
-      </script>
-      <![endif]-->
-      <script src="https://kit.fontawesome.com/e1d3e53513.js" crossorigin="anonymous"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-      <script src="vendors/vertical-timeline/assets/js/main.js"></script>
-      <script type="text/javascript" src="index.js"></script>
-   </head>
-   <body>
-      <ul id="menu">
-         <li data-menuanchor="home" class="active"><a href="#home">Home</a></li>
-         <li data-menuanchor="about"><a href="#about">About</a></li>
-         <li data-menuanchor="product"><a href="#product">Product</a></li>
-         <li data-menuanchor="timeline"><a href="#timeline">Timeline</a></li>
-         <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-         <li data-menuanchor="blog"><a href="https://code4nagoya.tumblr.com" target="_blank">Blog</a></li>
-         <li data-menuanchor="flickr"><a href="https://www.flickr.com/people/156372115@N05/" target="_blank">Flickr</a></li>
-      </ul>
-      <div id="fullpage">
-         <div class="section active" id="section0" style="padding-bottom: 0;">
-            <video class="home-mv-video max-width-initial" src="mov/codefornagoya.mov" poster="mov/codefornagoya.jpg" loop data-autoplay ></video>
-            <div class="home-mv-dot"></div>
-            <div class="home-title">
-               <img alt="title" src="imgs/title.png">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code for Nagoya - テクノロジーで街を楽しく！</title>
+    <meta name="author" content="Code for Nagoya" />
+    <meta name="description" content="「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。" />
+    <meta name="keywords"  content="Code,for,Nagoya,シビックテック,地域,課題,テクノロジー,解決" />
+    <meta name="Resource-type" content="Document" />
+    <meta property="og:site_name" content="Code for Nagoya">
+    <meta property="og:url" content="https://www.code4.nagoya/">
+    <meta property="og:title" content="Code for Nagoya - テクノロジーで街を楽しく！">
+    <meta property="og:description" content="「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。">
+    <meta property="og:image" content="https://www.code4.nagoya/thumbnail.png">
+    <meta property="og:type" content="article">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@code4nagoya">
+    <meta property="twitter:url" content="https://www.code4.nagoya/">
+    <meta property="twitter:title" content="Code for Nagoya - テクノロジーで街を楽しく！">
+    <meta property="twitter:description" content="「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。">
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@3.0.0/dist/siimple.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple-colors@0.2.0/dist/siimple-colors.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css" integrity="sha512-4rPgyv5iG0PZw8E+oRdfN/Gq+yilzt9rQ8Yci2jJ15rAyBmF0HBE4wFjBkoB72cxBeg63uobaj1UcNt/scV93w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="shortcut icon" href="icon.png">
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="https://kit.fontawesome.com/e1d3e53513.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js" integrity="sha512-gSf3NCgs6wWEdztl1e6vUqtRP884ONnCNzCpomdoQ0xXsk06lrxJsR7jX5yM/qAGkPGsps+4bLV5IEjhOZX+gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="vendors/vertical-timeline/assets/js/main.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+</head>
+<body>
+
+<ul id="menu">
+    <li data-menuanchor="home" class="active"><a href="#home">Home</a></li>
+    <li data-menuanchor="about"><a href="#about">About</a></li>
+    <li data-menuanchor="product"><a href="#product">Product</a></li>
+    <li data-menuanchor="timeline"><a href="#timeline">Timeline</a></li>
+    <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+    <li data-menuanchor="blog"><a href="https://code4nagoya.tumblr.com" target="_blank">Blog</a></li>
+    <li data-menuanchor="flickr"><a href="https://www.flickr.com/people/156372115@N05/" target="_blank">Flickr</a></li>
+</ul>
+
+<div id="fullpage">
+    <div class="section active" id="section0" style="padding-bottom: 0;">
+        <video class="home-mv-video" src="mov/codefornagoya.mov" poster="mov/codefornagoya.jpg" loop muted playsinline autoplay></video>
+        <div class="home-mv-dot"></div>
+        <div class="home-title">
+            <img alt="title" src="imgs/title.png">
+        </div>
+    </div>
+    <div class="section " id="section1">
+        <div class="intro">
+            <img src="imgs/logo.png" alt="logo">
+            <div style="height: 50px;"></div>
+            <h1>テクノロジーで街を楽しく！</h1>
+            <br>
+            <p>
+            「Code for Nagoya」は地域の課題を、アプリケーションやウェブサービスなどのテクノロジーで解決することを目指して2013年に活動を開始したコミュニティです。
+            地域のIT企業・団体・行政の有志や学生などコアメンバー20名以上が中心となり、月一回のミーティングを行っており、
+            加えて「オープンデータ」を用いた地域課題の解決、見える化をテーマとしたハッカソンやアイデアソン、セミナー、ワークショップ等のイベントを開催しています。
+            それらのイベントは地域のエンジニアだけでなく課題を持つ市民、学生が交流し、技術を学び、課題の解決を模索する場となっています。
+            </p>
+        </div>
+    </div>
+    <div class="section " id="section2">
+        <div class="slide product-outer" id="landscouter">
+            <div class="product-dot"></div>
+            <div class="product-box">
+                <a href="https://app.code4.nagoya/ls/" target="_blank">
+                   <img src="imgs/landscouter.png" alt="image" class="thumbnail" style="">
+                </a>
+                <h1>土地スカウター</h1>
+                <br>
+                <p>
+                「土地スカウター」とは 生命体ではなく土地の戦闘力を計測する 表示するWebアプリケーションです。
+                過去の災害情報や、津波予測、将来の地震発生の可能性などのオープンデータを
+                元に算出された戦闘力（災害リスクに対する強度）を表示します。
+                </p>
             </div>
          </div>
          <div class="section " id="section1">
