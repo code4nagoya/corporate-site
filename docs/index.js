@@ -10,33 +10,44 @@ $(document).ready(function() {
 	// 		return false;
 	// 	}
 	// }
-  
+
+	const safePlay = function(videoElement) {
+		if (!videoElement) return;
+		videoElement.muted = true;
+		videoElement.playsInline = true;
+		const playPromise = videoElement.play();
+		if (playPromise && typeof playPromise.catch === 'function') {
+			playPromise.catch(function() {
+				// Ignore autoplay restrictions until user interacts.
+			});
+		}
+	};
+
 	$('#fullpage').fullpage({
-		licenseKey: null,
+		licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 		sectionsColor: ['#000', '#f6ab00', '#7baabe', '#ccddff', '#4bbfc3'],
 		anchors: ['home', 'about', 'product', 'timeline', 'contact'],
 		menu: '#menu',
 		autoScrolling: false,
-		scrollHorizontally: true,
+		scrollHorizontally: false,
 		afterLoad: function(anchorLink, index) {
-			const loadedSection = $(this);
-			//using index
 			if (index == 1) {
 				const video = document.querySelector('video');
-				video.play();
+				safePlay(video);
 			}
 		}
 	});
 
 	const video = document.querySelector('video');
-	video.addEventListener('loadeddata', function() {
-		video.play();
-	});
+	if (video) {
+		video.addEventListener('loadeddata', function() {
+			safePlay(video);
+		});
+	}
 
 	$.get('event.json')
 	//サーバーからの返信を受け取る
 	.done(function(ret) {
-		console.log(ret);
 		$('#history').html('');
 		for (data of ret) {
 			const html = `
@@ -44,13 +55,13 @@ $(document).ready(function() {
 				<div class="cd-timeline__img cd-timeline__img--movie">
 				<i class="font-white fa-solid fa-calendar-days"></i>
 				</div> <!-- cd-timeline__img -->
-	
+
 				<div class="cd-timeline__content text-component">
 				<h2>${data.title}</h2>
 				<p class="color-contrast-medium">
 					${data.content}
 				</p>
-				
+
 				<div class="flex justify-between items-center">
 					<span class="cd-timeline__date">${data.date}</span>
 					<a href="${data.url}" target="_blank" class="btn btn--subtle">Read more</a>
@@ -96,5 +107,5 @@ $(document).ready(function() {
 			$('#message').html('送信に失敗しました。');
 		});
 	});
-  
+
 });
