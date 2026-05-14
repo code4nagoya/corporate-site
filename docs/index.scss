@@ -156,6 +156,10 @@ p {
   margin: 0;
 }
 
+#menu-toggle {
+  display: none;
+}
+
 .twitter-share-button {
   position: fixed;
   z-index: 99;
@@ -436,4 +440,55 @@ p {
 
 .fluid-width {
   width: 95%;
+}
+
+@media (max-width: 767px) {
+  #menu-toggle {
+    display: block;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1001;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    font-size: 26px;
+    line-height: 1;
+  }
+
+  #menu {
+    display: none;
+    z-index: 1000;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    width: auto;
+    height: auto;
+    padding: 8px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+  }
+
+  #menu.is-open {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu li {
+    margin: 6px;
+  }
+
+  #menu li a,
+  #menu li.active a {
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
 }

@@ -71,6 +71,24 @@ $(function () {
     $(".fp-tableCell").css("height", "");
   });
 
+
+
+  const menuToggle = $("#menu-toggle");
+  const menu = $("#menu");
+
+  menuToggle.on("click", function () {
+    const isOpen = menu.hasClass("is-open");
+    menu.toggleClass("is-open", !isOpen);
+    menuToggle.attr("aria-expanded", (!isOpen).toString());
+  });
+
+  menu.find("a").on("click", function () {
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      menu.removeClass("is-open");
+      menuToggle.attr("aria-expanded", "false");
+    }
+  });
+
   // Form submission with error handling
   $("form").submit(function (event) {
     event.preventDefault();
